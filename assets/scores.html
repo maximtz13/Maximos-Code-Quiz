@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Quiz Scores!</title>
+</head>
+<body>
+    <main class="highscoresMain">
+        <div class="highscoresContainerDiv">
+            <div class="highscoresDiv">
+                <h1>Scores</h1>
+            </div>
+            <table id="scores">
+                <tr class="rowScores" id="rowScores">
+                    <th >Initials:</th>
+                    <th >Scores:</th>
+                </tr>
+                <br />
+                <tr class="rowScores" id="rowScores">
+                    <th id="nameTable"></th>
+                    <th id="scoreTable"></th>
+                </tr>
+            </table>
+            <div class="tableControls">
+                <a href="../index.html"><button class="buttonSubmit">Go Back</button></a>
+                <button class="buttonSubmit" id="clearStorage">Clear Data</button>
+            </div>
+        </div>
+    </main>
+    <script src="./js/scores.script.js"></script>
+</body>
+</html>

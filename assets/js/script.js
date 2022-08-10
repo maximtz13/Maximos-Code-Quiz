@@ -47,9 +47,9 @@ var timerEl = document.querySelector(".timer");
 var mainContainerEl = document.querySelector(".container");
 var quizOverDiv = document.querySelector(".quizEnd");
 var quizOverHeaderEl = document.querySelector(".quizEndHeader");
-// var HighScoresDivEl = document.querySelector(".highscores-div");
+var HighScoresDivEl = document.querySelector(".highscoresDiv");
 var scoresButtonEl = document.querySelector("#storageSubmit");
-// var tableEl = document.querySelector("#row-scores");
+var tableEl = document.querySelector("#rowScores");
 var counter = 0;
 var timeLeft = 75;
 
@@ -145,11 +145,12 @@ var storeObjects = function () {
     scoresArray.push(scoresObj);
 
     localStorage.setItem(initials, JSON.stringify({ initials, timeLeft }));
-    console.log("array hjere", scoresArray);
+    console.log("array here", scoresArray);
+    debugger;
 }
 
 startButtonEl.addEventListener("click", startQuiz);
 scoresButtonEl.addEventListener("click", function () {
     storeObjects();
-    location.href = "#";
+    location.href = "./assets/scores.html";
 });
