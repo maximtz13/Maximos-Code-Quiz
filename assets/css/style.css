@@ -25,6 +25,7 @@ li {
 }
 button {
     outline: none;
+    cursor: pointer;
 }
 .header-div {
     display: flex;
@@ -62,7 +63,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: top;
-    width: 50%;
+    width: 80%;
     height: 50%;
     z-index: 10;
 }
