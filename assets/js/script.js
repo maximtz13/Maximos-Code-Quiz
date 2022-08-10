@@ -54,7 +54,6 @@ var counter = 0;
 var timeLeft = 75;
 
 var startQuiz = function () {
-    debugger;
     titleEl.remove();
     rulesEl.remove();
     buttonEl.remove();
@@ -106,6 +105,9 @@ var checkAnswer = function (buttonIndex) {
             mainContainerEl.style.backgroundColor = "white";
         }, 250);
         timeLeft -= 15;
+        if (timeLeft < 0) {
+            timeLeft = 0;
+        };
         timerEl.textContent = "Time: " + timeLeft;
     }
     if (counter >= 4) {
@@ -120,6 +122,7 @@ var checkAnswer = function (buttonIndex) {
 var timerStart;
 
 var endQuiz = function () {
+    debugger;
     clearInterval(timerStart);
 
     mainContainerEl.remove();
@@ -129,7 +132,6 @@ var endQuiz = function () {
     finalScore.className = "final-score";
     finalScore.textContent = "Your Final Score Is " + timeLeft + ".";
     quizOverHeaderEl.appendChild(finalScore);
-
 }
 
 var storeObjects = function () {
