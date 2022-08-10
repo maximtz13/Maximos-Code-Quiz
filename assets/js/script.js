@@ -1,3 +1,4 @@
+// Questions for the quiz along with answers and which answer is correct
 var questions = [
     {
         question: "Which of the following is an advantage of using JavaScript?",
@@ -35,6 +36,7 @@ var questions = [
         correct: 3
     }
 ];
+// variables
 var scoresArray = [];
 var startButtonEl = document.querySelector("#beginQuiz");
 var questionsContainer = document.querySelector(".questionContainer");
@@ -54,6 +56,7 @@ var counter = 0;
 var timeLeft = 75;
 var bodyEl = document.querySelector("#body");
 
+// start quiz button function
 var startQuiz = function () {
     titleEl.remove();
     rulesEl.remove();
@@ -92,6 +95,7 @@ var nextQuestion = function () {
     };
 };
 
+// function that checks user input against answers
 var checkAnswer = function (buttonIndex) {
     var correctAnswer = questions[counter].correct;
     if (correctAnswer === buttonIndex) {
@@ -122,6 +126,7 @@ var checkAnswer = function (buttonIndex) {
 
 var timerStart;
 
+// function for quiz end
 var endQuiz = function () {
     clearInterval(timerStart);
 
@@ -134,6 +139,7 @@ var endQuiz = function () {
     quizOverHeaderEl.appendChild(finalScore);
 }
 
+// function for storing user initials along with code to score list
 var storeObjects = function () {
     var initials = document.getElementById("initials").value.trim();
 
@@ -150,6 +156,7 @@ var storeObjects = function () {
     console.log("array here", scoresArray);
 }
 
+// event listeners to listen for user action
 startButtonEl.addEventListener("click", startQuiz);
 scoresButtonEl.addEventListener("click", function () {
     storeObjects();

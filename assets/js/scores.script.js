@@ -30,6 +30,7 @@ const listScores = function(myObject) {
     }
 };
 
+// clear data button clears the scores and initials from localstorage
 var clearStorage = function() {
     localStorage.clear();
     location.reload();
