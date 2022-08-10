@@ -52,6 +52,7 @@ var scoresButtonEl = document.querySelector("#storageSubmit");
 var tableEl = document.querySelector("#rowScores");
 var counter = 0;
 var timeLeft = 75;
+var bodyEl = document.querySelector("#body");
 
 var startQuiz = function () {
     titleEl.remove();
@@ -94,15 +95,15 @@ var nextQuestion = function () {
 var checkAnswer = function (buttonIndex) {
     var correctAnswer = questions[counter].correct;
     if (correctAnswer === buttonIndex) {
-        mainContainerEl.style.backgroundColor = "lightgreen"
+        bodyEl.style.backgroundColor = "lightgreen"
         setTimeout(function () {
-            mainContainerEl.style.backgroundColor = "white";
+            bodyEl.style.backgroundColor = "white";
         }, 250);
     }
     else {
-        mainContainerEl.style.backgroundColor = "red"
+        bodyEl.style.backgroundColor = "red"
         setTimeout(function () {
-            mainContainerEl.style.backgroundColor = "white";
+            bodyEl.style.backgroundColor = "white";
         }, 250);
         timeLeft -= 15;
         if (timeLeft < 0) {
@@ -122,7 +123,6 @@ var checkAnswer = function (buttonIndex) {
 var timerStart;
 
 var endQuiz = function () {
-    debugger;
     clearInterval(timerStart);
 
     mainContainerEl.remove();
@@ -148,7 +148,6 @@ var storeObjects = function () {
 
     localStorage.setItem(initials, JSON.stringify({ initials, timeLeft }));
     console.log("array here", scoresArray);
-    debugger;
 }
 
 startButtonEl.addEventListener("click", startQuiz);
