@@ -10,10 +10,58 @@
 
 <body>
     <header>
-        
+        <div class="headerDiv">
+            <ul id="nav">
+                <li class="scores"><a href="#">View Scores</a></li>
+                <li class="timer">Time: </li>
+            </ul>
+        </div>
     </header>
 
     <main>
+        <!--Quiz Container-->
+        <section class="container">
+            <div class="questionContainer" style="display: none;">
+                <h2 class="question-title">Title</h2>
+                <ul>
+                    <!--Quiz Answer Choices-->
+                    <li class="answer-choice"><button class="quizButton" id="a"></button></li>
+                    <li class="answer-choice"><button class="quizButton" id="b"></button></li>
+                    <li class="answer-choice"><button class="quizButton" id="c"></button></li>
+                    <li class="answer-choice"><button class="quizButton" id="d"></button></li>
+                </ul>
+            </div>
+            <!--Quiz Title-->
+            <div class="titleDiv">
+                <h2 class="quizTitle">Coding Quiz</h2>
+            </div>
+            <!--Quiz Rules-->
+            <div class="rulesDiv">
+                <p class="quizRules">Try to answer the following code-related questions within the time limit.
+                    Keep in mind that incorrect answers will penalize your score/time by 10 seconds!
+                </p>
+            </div>
+            <!--Start Quiz Button-->
+            <div class="buttonDiv">
+                <button class="quizButton" id="beginQuiz">Start Quiz</button>
+            </div>
+            <!--Quiz Container Close-->
+        </section>
+
+        <!--End of Quiz Container-->
+        <section class="quizEnd" style="display: none;">
+            <h2 class="quizEndHeader">Quiz Over!</h2>
+            <p class="initialRecord">Enter Your Initials</p>
+            <!--End of Quiz Form for Name-->
+            <form>
+                <input class="inputField" id="initials" type="text" name="playerInitials"
+                    placeholder="Enter Initials Here">
+                <button class="buttonSubmit" id="storageSubmit" type="reset">Submit</button>
+                </input>
+            </form>
+        </section>
+        <script src="./assets/js/script.js"></script>
     </main>
 </body>
+
 </html>
